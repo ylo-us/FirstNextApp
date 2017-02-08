@@ -1,7 +1,8 @@
 import { combineReducers, createStore } from 'redux';
+import Home from '../pages/home';
 
 const routeInitState = {
-	route: '/'
+	route: <Home />
 }
 
 const homeInitSate = {
@@ -17,7 +18,7 @@ const routeReducer = (state=routeInitState, action) => {
 			break;
 		}
 	}
-	console.log('action state: ', state);
+	// console.log('action state: ', state);
 	return state;
 }
 

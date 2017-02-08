@@ -1,11 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-
-export default ({ number, name, img }) => {
-  return (
-    <div>
+export default () => {
+	return (
+		<div>
       <h1>About</h1>
-      <div>{number}</div>
+      <h3>About us!!</h3>
     </div>
-  )
+	)
+    
 }
