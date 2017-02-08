@@ -1,6 +1,13 @@
-import React from 'react'
-export default () => (
-	<div>
-		<p>This is favorite page</p>
-	</div>
-)
+import React from 'react';
+import { connect } from 'react-redux';
+
+export default ({ number, name, img }) => {
+  return (
+    <div>
+      <h1>Favorite</h1>
+      <div>
+      	{number}
+      </div>
+    </div>
+  )
+}
