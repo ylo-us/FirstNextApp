@@ -2,12 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import data from '../misc/mockData';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import About from './about';
 import Favorite from './favorite';
 import Home from './home';
 import * as actions from '../component/actions';
-import store from '../component/states';
+import store from '../component/store';
+
 
 export default class Main extends React.Component {
 	static getInitialProps () {
@@ -16,7 +17,7 @@ export default class Main extends React.Component {
 
 	constructor(props) {
 		super(props);
-		// console.log(this.props);
+		console.log(this.props);
 		this.store = store;
 		this.store.states = this.props.store;
 		// console.log('store: ', this.store.states);
@@ -29,16 +30,18 @@ export default class Main extends React.Component {
 
 	_goToHome() {
 		console.log('before dispatch: ', this.store.states.route)
-		this.store.dispatch(actions.routes(Home))
+		this.store.dispatch(actions.routes('/'))
 		console.log('after dispatch: ', this.store.states.route);
 	}
 
 	_goToAbout() {
-		this.store.dispatch(actions.routes(About))
+		console.log('before dispatch: ', this.store.states.route)
+		this.store.dispatch(actions.routes('/about'))
+		console.log('after dispatch: ', this.store.states.route);
 	}
 
 	_goToFavorite() {
-		this.store.dispatch(actions.routes(Favorite))
+		this.store.dispatch(actions.routes('/favorite'))
 	}
 
 	render() {
@@ -65,7 +68,7 @@ export default class Main extends React.Component {
 					<div id="content" className="">
 						<div>
 							<h1 className="text-center">DEMO</h1>
-							<Provider store={this.store}>
+							<Provider store={store}>
 								<Home />
 							</Provider>
 						</div>

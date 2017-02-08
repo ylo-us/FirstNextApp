@@ -1,8 +1,7 @@
 import { combineReducers, createStore } from 'redux';
-import Home from '../pages/home';
 
 const routeInitState = {
-	page: Home
+	route: '/'
 }
 
 const homeInitSate = {
@@ -14,7 +13,7 @@ const homeInitSate = {
 const routeReducer = (state=routeInitState, action) => {
 	switch(action.type) {
 		case 'ROUTE': {
-			state = {...state, page: action.payload}
+			state = {...state, route: action.payload}
 			break;
 		}
 	}

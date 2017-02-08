@@ -19,11 +19,11 @@ class Home extends React.Component {
 	}
 }
 
-function mapStateToProps(state) {
+function mapStateToProps(store) {
 	return {
-		number: state.home.number,
-		name: state.home.name,
-		img: state.home.img
+		number: store.home.number,
+		name: store.home.name,
+		img: store.home.img
 	}
 }
 
