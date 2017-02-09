@@ -5,13 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "next",
-    "start": "node --harmony-async-await index"
+    "dev": "next"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "next": "file:node_modules/next",
+    "next": "latest",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0"
   }
