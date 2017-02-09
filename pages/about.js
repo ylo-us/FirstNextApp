@@ -1,7 +1,7 @@
 export default () => {
 	return (
-		<div>
-      <h1>About</h1>
+		<div className="text-center">
+      <h2>About</h2>
       <h3>About us!!</h3>
     </div>
 	)

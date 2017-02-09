@@ -38,8 +38,8 @@ export default class Main extends React.Component {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
         </Head>
-        <div className="main container-fluid">
-          <div className="pull-left">
+        <div className="container row">
+          <div className="container-fluid col-sm-3">
             <div id="logo">
               <img src="/static/Pokemon-GO-Tech2-720-624x351.jpg" width="300"></img>
             </div>
@@ -51,10 +51,9 @@ export default class Main extends React.Component {
               </div>
             </div>
           </div>
-          <div id="content" className="">
+          <div className="container container-fluid col-sm-9">
             <div>
-              <h1 className="text-center">DEMO</h1>
-
+              <div className="page-header"><h1 className="text-center">DEMO</h1></div>
                 <Provider store={this.store}>
                   <App />
                 </Provider>             
@@ -65,7 +64,3 @@ export default class Main extends React.Component {
     )
   }
 }
-
-
-// <App route={this.props.state.route.route}/>
-

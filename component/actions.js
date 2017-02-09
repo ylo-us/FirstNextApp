@@ -1,3 +1,4 @@
+// actions to dispatch state updates
 export function routes(path) {
 	return {
 		type: 'ROUTE',

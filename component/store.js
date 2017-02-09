@@ -3,14 +3,15 @@ import Home from '../pages/home';
 
 const routeInitState = {
 	route: <Home />
-}
+};
 
 const homeInitSate = {
 	number: 0,
 	name: 'not selected',
-	img: ''
+	img: '/static/cropped-ball.png'
 };
 
+// reducer to update page
 const routeReducer = (state=routeInitState, action) => {
 	switch(action.type) {
 		case 'ROUTE': {
@@ -18,10 +19,9 @@ const routeReducer = (state=routeInitState, action) => {
 			break;
 		}
 	}
-	// console.log('action state: ', state);
 	return state;
-}
-
+};
+// reducer to update pokemon data
 const homeReducer = (state=homeInitSate, action) => {
 	switch(action.type) {
 		case 'UPDATE_NUMBER': {
@@ -38,12 +38,12 @@ const homeReducer = (state=homeInitSate, action) => {
 		}
 	}
 	return state;
-}
+};
 
 const reducers = combineReducers({
 	route: routeReducer,
 	home: homeReducer
-})
+});
 
 const store = createStore(reducers);
 
