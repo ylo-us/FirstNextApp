@@ -3,14 +3,10 @@
   "version": "1.0.0",
   "description": "a short site with Next.js",
   "main": "index.js",
-  "engines": {
-    "node": "6.9.5"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "start": "node --harmony-async-await index"
   },
   "author": "",
   "license": "ISC",
