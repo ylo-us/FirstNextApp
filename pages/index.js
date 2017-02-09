@@ -71,6 +71,7 @@ export default class Main extends React.Component {
           <div id="content" className="">
             <div>
               <h1 className="text-center">DEMO</h1>
+
                 <Provider store={this.store}>
                   <App />
                 </Provider>             

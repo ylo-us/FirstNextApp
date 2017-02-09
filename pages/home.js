@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+
 import store from '../component/store';
 
 class Home extends React.Component {
@@ -20,7 +21,15 @@ class Home extends React.Component {
 		return (
 			<div>
         <h1>Home</h1>
-        
+        <div>
+	        <span>Number: {this.props.number}</span>
+	      </div>
+	      <div>
+	        <span>Name: {this.props.name}</span>
+        </div>
+        <div>
+	        <img src={this.props.img} />
+        </div>
       </div>
 		)
 	}
