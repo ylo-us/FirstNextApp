@@ -15,36 +15,19 @@ export default class Main extends React.Component {
 
   constructor (props) {
     super(props);
-    this.store = store;
-    console.log('index store: ', this.store);
-    console.log('this.props: ', this.props);
-    console.log('this.route: ', this.route);
-    
-  }
-
-  componentDidMount () {
-    // this.store.dispatch(actions.routes('Home'));
+    this.store = store; 
   }
 
   _goToHome() {
-    // console.log('before dispatch: ', this.store.states.route)
     this.store.dispatch(actions.routes(<Home />));
-    // console.log('after dispatch: ', this.store.states.route);
-    console.log('clicked home');
-    // this.props.state.route.route = <Home />;
   }
 
   _goToAbout() {
-    // console.log('before dispatch: ', this.store.states.route)
     this.store.dispatch(actions.routes(<About />));
-    // console.log('after dispatch: ', this.store.states.route);
-    console.log('clicked about');
-    // this.props.state.route.route = <About />;
   }
 
   _goToFavorite() {
     this.store.dispatch(actions.routes(<Favorite />));
-    
   }
 
   render () {
@@ -61,11 +44,11 @@ export default class Main extends React.Component {
               <img src="/static/Pokemon-GO-Tech2-720-624x351.jpg" width="300"></img>
             </div>
             <div>
-              <ul className="sideNav">
-                <li><span onClick={this._goToHome.bind(this)}>Home</span></li>
-                <li><span onClick={this._goToAbout.bind(this)}>About</span></li>
-                <li><span onClick={this._goToFavorite.bind(this)}>Favorite</span></li>
-              </ul>
+              <div className="sideNav list-group">
+                <a href="#" className="list-group-item" onClick={this._goToHome.bind(this)}><span className="text-center">Home</span></a>
+                <a href="#" className="list-group-item" onClick={this._goToAbout.bind(this)}><span className="text-center">About</span></a>
+                <a href="#" className="list-group-item" onClick={this._goToFavorite.bind(this)}><span className="text-center">Favorite</span></a>
+              </div>
             </div>
           </div>
           <div id="content" className="">

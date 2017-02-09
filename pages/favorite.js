@@ -12,7 +12,7 @@ class Favorite extends React.Component {
 	constructor(props) {
 		super(props);
 		this.store = store;
-		this.data = data;
+		this.data = [{}].concat(data);
 	}
 
 	componentWillMount() {
@@ -23,7 +23,7 @@ class Favorite extends React.Component {
 		console.log('this: ', e.target.value);
 		let imgUrl = '/static/' + e.target.value +'.png';
 		this.store.dispatch(actions.updateNum(e.target.value));
-		this.store.dispatch(actions.updateName(this.data[e.target.value - 1].name));
+		this.store.dispatch(actions.updateName(this.data[e.target.value].name));
 		this.store.dispatch(actions.updateImg(imgUrl));
 	}
 
@@ -31,7 +31,7 @@ class Favorite extends React.Component {
 		return (
 			<div>
         <h1>Favorite</h1>
-        <div>The favorite pokemon is: 
+        <div className="container">The favorite pokemon is: 
         	<select onChange={this._updateState.bind(this)}>
         		{this.data.map((element) => {
 							return <option value={element.number}>{element.name}</option>
@@ -51,10 +51,6 @@ function mapStateToProps(store) {
 	}
 }
 
-
-
 export default connect(mapStateToProps)(Favorite)
 
-// {data.map((element) => {
-//         			
-//         		})}
+
