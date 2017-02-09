@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import data from '../misc/mockData';
 import store from '../component/store';
 import * as actions from '../component/actions';
-import axios from 'axios';
 
 class Favorite extends React.Component {
 	// static getInitialProps() {
@@ -22,21 +21,10 @@ class Favorite extends React.Component {
 
 	_updateState(e) {
 		console.log('this: ', e.target.value);
-		let url = this.data[e.target.value - 1].imageUrl
-		let config = {
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-				'X-Requested-With': 'XMLHttpRequest'
-				// 'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
-			}
-		}
-		axios.get(url, config)
-				 .then((res) => {
-				 		console.log('get pics: ', res.data);
-				 })
+		let imgUrl = '/static/' + e.target.value +'.png';
 		this.store.dispatch(actions.updateNum(e.target.value));
 		this.store.dispatch(actions.updateName(this.data[e.target.value - 1].name));
-		this.store.dispatch(actions.updateImg(this.data[e.target.value - 1].imageUrl));
+		this.store.dispatch(actions.updateImg(imgUrl));
 	}
 
 	render() {
